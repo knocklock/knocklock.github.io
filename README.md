@@ -7,7 +7,8 @@
     <img src="assets/kl.png" width="150px" height="150px"/>
     <br/>
     <a href="https://play.google.com/store/apps/details?id=com.knocklock.applock"><strong>Knock lock screen - Applock</strong><br/></a>
-  Mudras are hand gestures that enhance the flow of energy during yoga and meditation. They pass energy throughout the body and are influenced by diet and lifestyle. Daily practice with proper pressure, touch, sitting position, and breathing for 5 to 45 minutes is recommended. The Mudras app provides guidance for practicing hand mudras anytime, anywhere. Elevate your wellbeing and achieve optimal energy flow with Mudras.
+  Are you worried about exposing your PIN while you unlock your phone?<br/>
+Here comes <strong>Knock Lock - Applock</strong> for the rescue. The innovative Lock Screen that will leave intruders baffled!
     <br/>
     <a href='https://play.google.com/store/apps/details?id=com.knocklock.applock'><img alt='Get it on Google Play' height="80" src='assets/badge_playstore.png'/></a>
     <br/>
@@ -15,7 +16,7 @@
     <img src="assets/hn.png" width="150px" height="150px"/>
     <br/>
     <a href="https://play.google.com/store/apps/details?id=knocklock.health.nutrition.foodguide.nutritionsforall.healthyfood"><strong>Health and Nutrition Guide</strong><br/></a>
-  Welcome to The Daily Yoga app it is the best app for anyone of any age group who wants to start or improve there yoga practice. Whether you seek stress relief or a mindful workout, our app has you covered. Embrace a healthier lifestyle today – download The Daily Yoga app and embark on a transformative journey of self-discovery!
+  Nutrition science teaches us that food, not just individual nutrients, plays a vital role in our health. Whether you're looking to lose weight, get fit, or gain weight, our Health and Nutrition: Nutrition Food Guide app can help you achieve your goals and live a healthy, sustainable, and happy lifestyle. Whether you follow a vegetarian or non-vegetarian diet, it's important to consume a variety of nutrient-rich foods like whole grains, fruits, vegetables, legumes, nuts, seeds, and lean proteins like chicken, fish, mutton, and prawns.
     <br/>
     <a href='https://play.google.com/store/apps/details?id=knocklock.health.nutrition.foodguide.nutritionsforall.healthyfood'><img alt='Get it on Google Play' height="80" src='assets/badge_playstore.png'/></a>
     <br/>
@@ -23,7 +24,7 @@
     <img src="assets/md.png" width="150px" height="150px"/>
     <br/>
     <a href="https://play.google.com/store/apps/details?id=mental.disorders.treatments"><strong>Mental disorders & Treatments</strong><br/></a>
-  Immerse yourself in a blissful meditation experience with our free and ad-free meditation music app. Find serenity and calmness as you explore a vast library of soothing tracks carefully curated to enhance your mindfulness practice. Discover tranquility, relieve stress, and achieve inner peace with our collection of meditative melodies. Download now and embark on a journey of relaxation and self-discovery.
+ Are you struggling with mental health issues? Look no further than All Mental Disorders and Treatment, the all-in-one app for mental health management. With our comprehensive dictionary of mental disorders from A to Z, you can easily identify symptoms and find prevention measures and natural remedies.
     <br/>
     <a href='https://play.google.com/store/apps/details?id=mental.disorders.treatments'><img alt='Get it on Google Play' height="80" src='assets/badge_playstore.png'/></a>
     <br/>
@@ -31,7 +32,7 @@
     <img src="assets/sd.png" width="150px" height="150px"/>
     <br/>
     <a href="https://play.google.com/store/apps/details?id=stomach.diseases.treatment"><strong>All stomach Diseases & Treatment</strong><br/></a>
-  According to Hinduism, each day is important. In today's world every person is moving very fast and have very less time for mental peace. These Pooja practices will help in dropping your stress and anxiety, and discover a lasting calm that comes from within, in just a few minutes a day.
+  All Stomach Diseases and Treatment app is a comprehensive resource for information on gastrointestinal diseases, digestive system diseases, and stomach health tips. It includes detailed information, high-quality pictures, and diagrams for various diseases of the digestive system. However, it is important to note that this app does not provide clinical practice guidelines and one should always seek medical help from a qualified physician when feeling unwell.
     <br/>
     <a href='https://play.google.com/store/apps/details?id=stomach.diseases.treatment'><img alt='Get it on Google Play' height="80" src='assets/badge_playstore.png'/></a>
   </p>
