@@ -1,7 +1,7 @@
 # Privacy Policy 
 
 
-**Knock Lock** built the <b>Mental disorders</b> as a Free app with in-app-purchases for the Google Play Store. This SERVICE is provided by Knock Lock at no cost and is intended for use as is. 
+**Knock Lock** built the <b>Mental disorders & Treatments</b> as a Free app with in-app-purchases for the Google Play Store. This SERVICE is provided by Knock Lock at no cost and is intended for use as is. 
 
 This page is used to inform visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our Service. 
 
