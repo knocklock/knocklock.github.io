@@ -1,9 +1,7 @@
-<p>
-  <img src="assets/logo.svg" height="200px">
+<img src="assets/knocklock.png" />
   <p align="center">
     Explore a world of innovation and creativity as we present our finest selection of cutting-edge mobile applications. Each app is meticulously crafted to deliver a seamless and engaging user experience, tailored to meet diverse needs and preferences.
   </p>
-</p>
 <h1>Portfolio</h1>
   <p align="center">
     <img src="assets/mudras.png" width="150px" height="150px"/>
