@@ -28,7 +28,7 @@
     <a href='https://play.google.com/store/apps/details?id=mental.disorders.treatments'><img alt='Get it on Google Play' height="80" src='assets/badge_playstore.png'/></a>
     <br/>
     <br/>
-    <img src="assets/sd.webp" width="150px" height="150px"/>
+    <img src="assets/sd.png" width="150px" height="150px"/>
     <br/>
     <a href="https://play.google.com/store/apps/details?id=stomach.diseases.treatment"><strong>All stomach Diseases & Treatment</strong><br/></a>
   According to Hinduism, each day is important. In today's world every person is moving very fast and have very less time for mental peace. These Pooja practices will help in dropping your stress and anxiety, and discover a lasting calm that comes from within, in just a few minutes a day.
