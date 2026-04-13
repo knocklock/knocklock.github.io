@@ -1,120 +1,38 @@
-<p align="center">
-  <img src="assets/knocklock.png" width="120" />
-</p>
-
-<h1 align="center">GoldenKing Apps</h1>
-
-<p align="center">
-  Crafting simple, powerful, and premium mobile experiences for everyday life.
-</p>
-
----
-
-## 🌟 Our Apps
-
-Explore our collection of thoughtfully designed apps across security, wellness, and knowledge.
-
----
-
-### 🔥 Featured App
-
-<p align="center">
-  <img src="assets/sun.png" width="140"/>
-</p>
-
-<p align="center">
-  <strong>Sun Salutation (Surya Namaskar)</strong><br/>
-  A modern yoga experience to burn fat, build strength, and boost daily energy.
-</p>
-
-<p align="center">
-  <a href="#"><img src="assets/badge_playstore.png" height="60"/></a>
-</p>
-
----
-
-## 📱 Portfolio
-
-### 🔐 Knock Lock Screen – Applock
-<p align="center">
-  <img src="assets/kl.png" width="120"/>
-</p>
-
-Secure your phone with an innovative knock-based lock system that protects your privacy in a unique way.
-
-<p align="center">
-  <a href="https://play.google.com/store/apps/details?id=com.knocklock.applock">
-    <img src="assets/badge_playstore.png" height="60"/>
-  </a>
-</p>
-
----
-
-### 🥗 Health & Nutrition Guide
-<p align="center">
-  <img src="assets/hn.png" width="120"/>
-</p>
-
-Achieve your health goals with smart nutrition guidance and balanced diet insights for everyday life.
-
-<p align="center">
-  <a href="https://play.google.com/store/apps/details?id=knocklock.health.nutrition.foodguide.nutritionsforall.healthyfood">
-    <img src="assets/badge_playstore.png" height="60"/>
-  </a>
-</p>
-
----
-
-### 🧠 Mental Disorders & Treatments
-<p align="center">
-  <img src="assets/md.png" width="120"/>
-</p>
-
-Understand mental health better with structured insights, symptoms, and natural support methods.
-
-<p align="center">
-  <a href="https://play.google.com/store/apps/details?id=mental.disorders.treatments">
-    <img src="assets/badge_playstore.png" height="60"/>
-  </a>
-</p>
-
----
-
-### 🩺 Stomach Diseases & Treatment
-<p align="center">
-  <img src="assets/sd.png" width="120"/>
-</p>
-
-A comprehensive guide to digestive health, symptoms, and prevention techniques.
-
-<p align="center">
-  <a href="https://play.google.com/store/apps/details?id=stomach.diseases.treatment">
-    <img src="assets/badge_playstore.png" height="60"/>
-  </a>
-</p>
-
----
-
-## 💡 About Us
-
-We build apps that are:
-- ✨ Simple & intuitive  
-- 🧘 Wellness-focused  
-- ⚡ Fast & lightweight  
-- 🎯 Designed for real-life use  
-
----
-
-## 🚀 Explore More
-
-<p align="center">
-  <a href="https://play.google.com/store/search?q=pub:GoldenKing%20Apps&c=apps">
-    <strong>View All Apps on Google Play →</strong>
-  </a>
-</p>
-
----
-
-<p align="center">
-  Crafted with ❤️ in 🇮🇳
-</p>
+<img src="assets/knocklock.png" />
+  <p align="center">
+    Explore a world of innovation and creativity as we present our finest selection of cutting-edge mobile applications. Each app is meticulously crafted to deliver a seamless and engaging user experience, tailored to meet diverse needs and preferences.
+  </p>
+<h1>Portfolio</h1>
+  <p align="center">
+    <img src="assets/kl.png" width="150px" height="150px"/>
+    <br/>
+    <a href="https://play.google.com/store/apps/details?id=com.knocklock.applock"><strong>Knock lock screen - Applock</strong><br/></a>
+  Are you worried about exposing your PIN while you unlock your phone?<br/>
+Here comes <strong>Knock Lock - Applock</strong> for the rescue. The innovative Lock Screen that will leave intruders baffled!
+    <br/>
+    <a href='https://play.google.com/store/apps/details?id=com.knocklock.applock'><img alt='Get it on Google Play' height="80" src='assets/badge_playstore.png'/></a>
+    <br/>
+    <br/>
+    <img src="assets/hn.png" width="150px" height="150px"/>
+    <br/>
+    <a href="https://play.google.com/store/apps/details?id=knocklock.health.nutrition.foodguide.nutritionsforall.healthyfood"><strong>Health and Nutrition Guide</strong><br/></a>
+  Nutrition science teaches us that food, not just individual nutrients, plays a vital role in our health. Whether you're looking to lose weight, get fit, or gain weight, our Health and Nutrition: Nutrition Food Guide app can help you achieve your goals and live a healthy, sustainable, and happy lifestyle. Whether you follow a vegetarian or non-vegetarian diet, it's important to consume a variety of nutrient-rich foods like whole grains, fruits, vegetables, legumes, nuts, seeds, and lean proteins like chicken, fish, mutton, and prawns.
+    <br/>
+    <a href='https://play.google.com/store/apps/details?id=knocklock.health.nutrition.foodguide.nutritionsforall.healthyfood'><img alt='Get it on Google Play' height="80" src='assets/badge_playstore.png'/></a>
+    <br/>
+    <br/>
+    <img src="assets/md.png" width="150px" height="150px"/>
+    <br/>
+    <a href="https://play.google.com/store/apps/details?id=mental.disorders.treatments"><strong>Mental disorders & Treatments</strong><br/></a>
+ Are you struggling with mental health issues? Look no further than All Mental Disorders and Treatment, the all-in-one app for mental health management. With our comprehensive dictionary of mental disorders from A to Z, you can easily identify symptoms and find prevention measures and natural remedies.
+    <br/>
+    <a href='https://play.google.com/store/apps/details?id=mental.disorders.treatments'><img alt='Get it on Google Play' height="80" src='assets/badge_playstore.png'/></a>
+    <br/>
+    <br/>
+    <img src="assets/sd.png" width="150px" height="150px"/>
+    <br/>
+    <a href="https://play.google.com/store/apps/details?id=stomach.diseases.treatment"><strong>All stomach Diseases & Treatment</strong><br/></a>
+  All Stomach Diseases and Treatment app is a comprehensive resource for information on gastrointestinal diseases, digestive system diseases, and stomach health tips. It includes detailed information, high-quality pictures, and diagrams for various diseases of the digestive system. However, it is important to note that this app does not provide clinical practice guidelines and one should always seek medical help from a qualified physician when feeling unwell.
+    <br/>
+    <a href='https://play.google.com/store/apps/details?id=stomach.diseases.treatment'><img alt='Get it on Google Play' height="80" src='assets/badge_playstore.png'/></a>
+  </p>
