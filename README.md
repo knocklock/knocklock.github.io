@@ -1,162 +1,120 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>GoldenKing Apps</title>
+<p align="center">
+  <img src="assets/knocklock.png" width="120" />
+</p>
 
-<style>
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #0E0A08;
-  color: #fff;
-}
+<h1 align="center">GoldenKing Apps</h1>
 
-/* HERO */
-.hero {
-  text-align: center;
-  padding: 80px 20px 40px;
-}
+<p align="center">
+  Crafting simple, powerful, and premium mobile experiences for everyday life.
+</p>
 
-.hero img {
-  width: 120px;
-  border-radius: 24px;
-}
+---
 
-.hero h1 {
-  font-size: 32px;
-  margin-top: 20px;
-}
+## 🌟 Our Apps
 
-.hero p {
-  max-width: 600px;
-  margin: 16px auto;
-  color: rgba(255,255,255,0.6);
-}
+Explore our collection of thoughtfully designed apps across security, wellness, and knowledge.
 
-/* GRID */
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 40px 20px;
-}
+---
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-}
+### 🔥 Featured App
 
-/* CARD */
-.card {
-  background: #171310;
-  border-radius: 20px;
-  padding: 20px;
-  transition: 0.3s;
-  border: 1px solid rgba(255,255,255,0.05);
-}
+<p align="center">
+  <img src="assets/sun.png" width="140"/>
+</p>
 
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-}
+<p align="center">
+  <strong>Sun Salutation (Surya Namaskar)</strong><br/>
+  A modern yoga experience to burn fat, build strength, and boost daily energy.
+</p>
 
-.card img {
-  width: 80px;
-  border-radius: 16px;
-}
+<p align="center">
+  <a href="#"><img src="assets/badge_playstore.png" height="60"/></a>
+</p>
 
-.card h3 {
-  margin: 12px 0 6px;
-}
+---
 
-.card p {
-  font-size: 14px;
-  color: rgba(255,255,255,0.6);
-}
+## 📱 Portfolio
 
-.play-btn {
-  margin-top: 12px;
-  display: inline-block;
-}
+### 🔐 Knock Lock Screen – Applock
+<p align="center">
+  <img src="assets/kl.png" width="120"/>
+</p>
 
-.play-btn img {
-  height: 45px;
-}
+Secure your phone with an innovative knock-based lock system that protects your privacy in a unique way.
 
-/* FOOTER */
-.footer {
-  text-align: center;
-  padding: 40px;
-  color: rgba(255,255,255,0.4);
-  font-size: 14px;
-}
-</style>
-</head>
+<p align="center">
+  <a href="https://play.google.com/store/apps/details?id=com.knocklock.applock">
+    <img src="assets/badge_playstore.png" height="60"/>
+  </a>
+</p>
 
-<body>
+---
 
-<!-- HERO -->
-<div class="hero">
-  <img src="assets/knocklock.png" />
-  <h1>GoldenKing Apps</h1>
-  <p>
-    Crafting powerful, intuitive mobile experiences that improve everyday life.
-  </p>
-</div>
+### 🥗 Health & Nutrition Guide
+<p align="center">
+  <img src="assets/hn.png" width="120"/>
+</p>
 
-<!-- APPS -->
-<div class="container">
-  <div class="grid">
+Achieve your health goals with smart nutrition guidance and balanced diet insights for everyday life.
 
-    <!-- APP 1 -->
-    <div class="card">
-      <img src="assets/kl.png" />
-      <h3>Knock Lock Screen</h3>
-      <p>Secure your phone with a unique knock-based lock system.</p>
-      <a class="play-btn" href="https://play.google.com/store/apps/details?id=com.knocklock.applock">
-        <img src="assets/badge_playstore.png"/>
-      </a>
-    </div>
+<p align="center">
+  <a href="https://play.google.com/store/apps/details?id=knocklock.health.nutrition.foodguide.nutritionsforall.healthyfood">
+    <img src="assets/badge_playstore.png" height="60"/>
+  </a>
+</p>
 
-    <!-- APP 2 -->
-    <div class="card">
-      <img src="assets/hn.png" />
-      <h3>Health & Nutrition Guide</h3>
-      <p>Achieve your fitness goals with smart nutrition insights.</p>
-      <a class="play-btn" href="https://play.google.com/store/apps/details?id=knocklock.health.nutrition.foodguide.nutritionsforall.healthyfood">
-        <img src="assets/badge_playstore.png"/>
-      </a>
-    </div>
+---
 
-    <!-- APP 3 -->
-    <div class="card">
-      <img src="assets/md.png" />
-      <h3>Mental Disorders</h3>
-      <p>Understand mental health with structured insights and guidance.</p>
-      <a class="play-btn" href="https://play.google.com/store/apps/details?id=mental.disorders.treatments">
-        <img src="assets/badge_playstore.png"/>
-      </a>
-    </div>
+### 🧠 Mental Disorders & Treatments
+<p align="center">
+  <img src="assets/md.png" width="120"/>
+</p>
 
-    <!-- APP 4 -->
-    <div class="card">
-      <img src="assets/sd.png" />
-      <h3>Stomach Diseases</h3>
-      <p>Learn about digestive health and prevention methods.</p>
-      <a class="play-btn" href="https://play.google.com/store/apps/details?id=stomach.diseases.treatment">
-        <img src="assets/badge_playstore.png"/>
-      </a>
-    </div>
+Understand mental health better with structured insights, symptoms, and natural support methods.
 
-  </div>
-</div>
+<p align="center">
+  <a href="https://play.google.com/store/apps/details?id=mental.disorders.treatments">
+    <img src="assets/badge_playstore.png" height="60"/>
+  </a>
+</p>
 
-<!-- FOOTER -->
-<div class="footer">
+---
+
+### 🩺 Stomach Diseases & Treatment
+<p align="center">
+  <img src="assets/sd.png" width="120"/>
+</p>
+
+A comprehensive guide to digestive health, symptoms, and prevention techniques.
+
+<p align="center">
+  <a href="https://play.google.com/store/apps/details?id=stomach.diseases.treatment">
+    <img src="assets/badge_playstore.png" height="60"/>
+  </a>
+</p>
+
+---
+
+## 💡 About Us
+
+We build apps that are:
+- ✨ Simple & intuitive  
+- 🧘 Wellness-focused  
+- ⚡ Fast & lightweight  
+- 🎯 Designed for real-life use  
+
+---
+
+## 🚀 Explore More
+
+<p align="center">
+  <a href="https://play.google.com/store/search?q=pub:GoldenKing%20Apps&c=apps">
+    <strong>View All Apps on Google Play →</strong>
+  </a>
+</p>
+
+---
+
+<p align="center">
   Crafted with ❤️ in 🇮🇳
-</div>
-
-</body>
-</html>
+</p>
