@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Knock Lock Screen | GoldenKing Apps</title>
+  <meta name="description" content="Privacy Policy for Knock Lock Screen - Applock by GoldenKing Apps." />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" href="../../assets/gk.webp" />
+  <link rel="apple-touch-icon" href="../../assets/gk.webp" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Privacy Policy — Knock Lock Screen | GoldenKing Apps" />
+  <meta property="og:description" content="Privacy Policy for Knock Lock Screen - Applock by GoldenKing Apps." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://knocklock.github.io/knock-lock-screen/privacy-policy/" />
+  <meta property="og:image" content="https://knocklock.github.io/assets/knocklock.png" />
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0c0c0f; --bg-2: #111116; --bg-3: #18181f;
+      --border: rgba(255,255,255,0.07); --border-hi: rgba(255,255,255,0.13);
+      --text: #ededf0; --text-soft: #8e8ea0; --text-muted: #5a5a6e;
+      --mint: #00e5a0; --mint-dim: rgba(0,229,160,0.10);
+      --coral: #ff6b5b; --purple: #7c6ffd;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      background: var(--bg); color: var(--text);
+      min-height: 100vh;
+    }
+    body::before {
+      content: ""; position: fixed; inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+      background-size: 36px 36px; pointer-events: none; z-index: 0;
+    }
+    /* Navbar */
+    .navbar {
+      background: rgba(12,12,15,0.92) !important;
+      backdrop-filter: blur(20px); border-bottom: 1px solid var(--border);
+    }
+    .navbar-brand {
+      font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 17px;
+      color: var(--text) !important; display: flex; align-items: center; gap: 10px;
+    }
+    .navbar-brand img { width: 36px; height: 36px; border-radius: 9px; object-fit: cover; border: 1px solid var(--border-hi); }
+    .btn-back {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 18px; border-radius: 99px;
+      border: 1px solid var(--border-hi); background: rgba(255,255,255,0.05);
+      color: var(--text); font-size: 14px; font-weight: 600;
+      transition: background 0.2s;
+    }
+    .btn-back:hover { background: rgba(255,255,255,0.10); color: var(--text); }
+    /* Hero */
+    .policy-hero {
+      position: relative; padding: 100px 0 60px;
+      background: radial-gradient(ellipse 70% 50% at 20% 50%, rgba(0,229,160,0.10) 0%, transparent 60%);
+    }
+    .app-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 10px 18px; border-radius: 14px;
+      background: var(--bg-3); border: 1px solid var(--border-hi);
+      margin-bottom: 28px;
+    }
+    .app-badge img { width: 44px; height: 44px; border-radius: 10px; object-fit: cover; }
+    .app-badge span { font-size: 14px; font-weight: 700; color: var(--text-soft); }
+    .policy-hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(36px, 5vw, 60px); font-weight: 700;
+      letter-spacing: -1.2px; line-height: 1.05; margin-bottom: 16px;
+    }
+    .policy-hero h1 span {
+      background: linear-gradient(135deg, var(--mint), #00b4d8);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .meta-row { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; }
+    .meta-pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 14px; border-radius: 99px;
+      background: var(--mint-dim); border: 1px solid rgba(0,229,160,0.15);
+      font-size: 12px; font-weight: 700; color: var(--mint);
+    }
+    .meta-pill.muted { background: rgba(255,255,255,0.04); border-color: var(--border); color: var(--text-muted); }
+    /* Content */
+    .policy-body { position: relative; z-index: 1; padding-bottom: 100px; }
+    .policy-card {
+      background: var(--bg-3); border: 1px solid var(--border);
+      border-radius: 20px; padding: 48px;
+    }
+    .section-block { padding: 32px 0; border-bottom: 1px solid var(--border); }
+    .section-block:last-child { border-bottom: none; padding-bottom: 0; }
+    .section-block h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 20px; font-weight: 700; color: var(--text);
+      display: flex; align-items: center; gap: 10px; margin-bottom: 16px;
+    }
+    .section-block h2 .ico {
+      width: 34px; height: 34px; border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; background: var(--mint-dim); flex-shrink: 0;
+    }
+    .section-block p, .section-block li {
+      font-size: 15px; color: var(--text-soft); line-height: 1.85;
+    }
+    .section-block ul { padding-left: 20px; margin: 12px 0 0; }
+    .section-block ul li { margin-bottom: 8px; }
+    .third-party-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--mint); font-weight: 600; font-size: 14px;
+      text-decoration: none; transition: opacity 0.2s;
+    }
+    .third-party-link:hover { opacity: 0.75; }
+    .third-party-grid { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
+    .third-party-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 14px 18px; border-radius: 12px;
+      background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+    }
+    .third-party-item i { color: var(--mint); font-size: 18px; flex-shrink: 0; }
+    .third-party-item span { font-size: 14px; color: var(--text-soft); }
+    .third-party-item a { color: var(--mint); font-weight: 600; font-size: 13px; margin-left: auto; }
+    .contact-box {
+      background: radial-gradient(ellipse at top left, rgba(0,229,160,0.10), transparent 60%),
+                  var(--bg-3);
+      border: 1px solid rgba(0,229,160,0.18); border-radius: 16px; padding: 28px;
+      margin-top: 8px;
+    }
+    .contact-box p { margin: 0; font-size: 15px; color: var(--text-soft); }
+    .contact-box a { color: var(--mint); font-weight: 700; }
+    /* Footer strip */
+    .policy-footer {
+      border-top: 1px solid var(--border); padding: 28px 0;
+      font-size: 13px; color: var(--text-muted); text-align: center;
+    }
+    .policy-footer a { color: var(--mint); font-weight: 600; }
+    @media (max-width: 768px) {
+      .policy-card { padding: 28px 20px; }
+      .policy-hero { padding-top: 88px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a class="navbar-brand" href="../../">
+        <img src="../../assets/gk.webp" alt="GoldenKing Apps" />
+        GoldenKing Apps
+      </a>
+      <a class="btn-back" href="../../">
+        <i class="bi bi-arrow-left"></i> Back to home
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="policy-hero">
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="app-badge">
+        <img src="../../assets/kl.png" alt="Knock Lock Screen icon" />
+        <span>Knock Lock Screen — Applock</span>
+      </div>
+      <h1>Privacy <span>Policy</span></h1>
+      <div class="meta-row">
+        <span class="meta-pill"><i class="bi bi-calendar3"></i> Effective: April 13, 2026</span>
+        <span class="meta-pill muted"><i class="bi bi-building"></i> GoldenKing Apps</span>
+        <span class="meta-pill muted"><i class="bi bi-google-play"></i> Free · Ad-supported</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div class="policy-body">
+    <div class="container">
+      <div class="policy-card">
+
+        <div class="section-block">
+          <h2><span class="ico">📋</span> Overview</h2>
+          <p><strong style="color:var(--text);">GoldenKing Apps</strong> built the <strong style="color:var(--text);">Knock Lock Screen — Applock</strong> as a free, ad-supported application for the Google Play Store. This SERVICE is provided by GoldenKing Apps at no cost and is intended for use as is.</p>
+          <p>This page informs you of our policies regarding the collection, use, and disclosure of Personal Information when you use our Service. By choosing to use our Service, you agree to the collection and use of information in accordance with this policy.</p>
+        </div>
+
+        <div class="section-block">
+          <h2><span class="ico">📊</span> Information Collection and Use</h2>
+          <p>For a better experience while using our Service, we may require you to provide certain personally identifiable information. The information we request will be retained and used as described in this privacy policy.</p>
+          <p>The app uses third-party services that may collect information used to identify you:</p>
+          <div class="third-party-grid">
+            <div class="third-party-item">
+              <i class="bi bi-google"></i>
+              <span>Google Play Services</span>
+              <a href="https://www.google.com/policies/privacy/" target="_blank" rel="noopener">Privacy Policy <i class="bi bi-arrow-up-right"></i></a>
+            </div>
+            <div class="third-party-item">
+              <i class="bi bi-phone"></i>
+              <span>AdMob</span>
+              <a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank" rel="noopener">Privacy Policy <i class="bi bi-arrow-up-right"></i></a>
+            </div>
+            <div class="third-party-item">
+              <i class="bi bi-bar-chart"></i>
+              <span>Google Analytics for Firebase</span>
+              <a href="https://firebase.google.com/policies/analytics" target="_blank" rel="noopener">Privacy Policy <i class="bi bi-arrow-up-right"></i></a>
+            </div>
+            <div class="third-party-item">
+              <i class="bi bi-bug"></i>
+              <span>Firebase Crashlytics</span>
+              <a href="https://firebase.google.com/support/privacy/" target="_blank" rel="noopener">Privacy Policy <i class="bi bi-arrow-up-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-block">
+          <h2><span class="ico">📁</span> Log Data</h2>
+          <p>Whenever you use our Service, in the case of an error in the app, we collect data and information (through third-party products) on your phone called Log Data. This Log Data may include:</p>
+          <ul>
+            <li>Your device Internet Protocol ("IP") address</li>
+            <li>Device name and operating system version</li>
+            <li>App configuration when utilizing our Service</li>
+            <li>The time and date of your use of the Service</li>
+            <li>Other statistics</li>
+          </ul>
+        </div>
+
+        <div class="section-block">
+          <h2><span class="ico">🍪</span> Cookies</h2>
+          <p>This Service does not use cookies explicitly. However, the app may use third-party code and libraries that use cookies to collect information and improve their services. You have the option to accept or refuse these cookies. If you refuse, you may not be able to use some portions of this Service.</p>
+        </div>
+
+        <div class="section-block">
+          <h2><span class="ico">🤝</span> Service Providers</h2>
+          <p>We may employ third-party companies and individuals for the following reasons:</p>
+          <ul>
+            <li>To facilitate our Service</li>
+            <li>To provide the Service on our behalf</li>
+            <li>To perform Service-related services</li>
+            <li>To assist us in analyzing how our Service is used</li>
+          </ul>
+          <p>These third parties have access to your Personal Information only to perform tasks assigned on our behalf and are obligated not to disclose or use it for any other purpose.</p>
+        </div>
+
+        <div class="section-block">
+          <h2><span class="ico">🔒</span> Security</h2>
+          <p>We value your trust in providing us your Personal Information and strive to use commercially acceptable means of protecting it. However, no method of transmission over the internet or electronic storage is 100% secure, and we cannot guarantee its absolute security.</p>
+        </div>
+
+        <div class="section-block">
+          <h2><span class="ico">🔗</span> Links to Other Sites</h2>
+          <p>This Service may contain links to other sites. If you click a third-party link, you will be directed to that site. These external sites are not operated by us. We strongly advise you to review the Privacy Policy of any third-party site you visit. We have no control over and assume no responsibility for their content, privacy policies, or practices.</p>
+        </div>
+
+        <div class="section-block">
+          <h2><span class="ico">👶</span> Children's Privacy</h2>
+          <p>This Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13. If we discover that a child under 13 has provided personal information, we will delete it immediately from our servers. If you are a parent or guardian and are aware that your child has provided us with personal information, please contact us.</p>
+        </div>
+
+        <div class="section-block">
+          <h2><span class="ico">🔄</span> Changes to This Privacy Policy</h2>
+          <p>We may update our Privacy Policy from time to time. You are advised to review this page periodically for any changes. We will notify you of changes by posting the new Privacy Policy on this page. Changes are effective immediately after they are posted.</p>
+        </div>
+
+        <div class="section-block">
+          <h2><span class="ico">📩</span> Contact Us</h2>
+          <div class="contact-box">
+            <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us:</p>
+            <p class="mt-3"><strong style="color:var(--text);">Email:</strong> <a href="mailto:help.knocklock@gmail.com">help.knocklock@gmail.com</a></p>
+            <p><strong style="color:var(--text);">Developer:</strong> GoldenKing Apps</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="policy-footer">
+    <div class="container">
+      &copy; 2025 <a href="../../">GoldenKing Apps</a>. All rights reserved. &nbsp;·&nbsp;
+      <a href="https://play.google.com/store/apps/details?id=com.knocklock.applock" target="_blank" rel="noopener">View on Google Play</a>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
