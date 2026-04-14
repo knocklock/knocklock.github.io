@@ -4,857 +4,1145 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GoldenKing Apps | Premium Android Apps</title>
-  <meta
-    name="description"
-    content="GoldenKing Apps builds clean Android apps for privacy, wellness, education, and everyday utility."
-  />
-  <meta name="theme-color" content="#0a4f49" />
+  <meta name="description" content="GoldenKing Apps builds clean Android apps for privacy, wellness, education, and everyday utility." />
+  <meta name="theme-color" content="#0c0c0f" />
   <meta property="og:title" content="GoldenKing Apps | Premium Android Apps" />
   <meta property="og:description" content="Clean Android apps for privacy, wellness, education, and everyday utility." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/knocklock.png" />
-  <link rel="icon" href="assets/ss_app.webp" />
+  <link rel="icon" href="assets/gk.webp" />
+  <link rel="apple-touch-icon" href="assets/gk.webp" />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
   <style>
+    /* ─── Tokens ─── */
     :root {
-      --ink: #151515;
-      --ink-soft: #3e4144;
-      --muted: #6b7075;
-      --line: #dfe4e8;
-      --paper: #f7f9f8;
-      --surface: #ffffff;
-      --surface-alt: #eef4f2;
-      --teal: #0f766e;
-      --teal-deep: #0a4f49;
-      --coral: #ef5b4c;
-      --lime: #b9d34a;
-      --sky: #4c8fd9;
-      --shadow: 0 18px 55px rgba(21, 21, 21, 0.1);
-      --max-width: 1180px;
-      --radius: 8px;
+      --bg:          #0c0c0f;
+      --bg-2:        #111116;
+      --bg-3:        #18181f;
+      --surface:     #1e1e28;
+      --border:      rgba(255,255,255,0.07);
+      --border-hi:   rgba(255,255,255,0.13);
+      --text:        #ededf0;
+      --text-soft:   #8e8ea0;
+      --text-muted:  #5a5a6e;
+      --mint:        #00e5a0;
+      --mint-dim:    rgba(0,229,160,0.12);
+      --mint-glow:   rgba(0,229,160,0.25);
+      --coral:       #ff6b5b;
+      --coral-dim:   rgba(255,107,91,0.12);
+      --purple:      #7c6ffd;
+      --purple-dim:  rgba(124,111,253,0.12);
+      --gold:        #f5a623;
+      --radius:      16px;
+      --radius-sm:   10px;
+      --radius-xs:   6px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    html { scroll-behavior: smooth; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    *, *::before, *::after { box-sizing: border-box; }
 
     body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--ink);
-      background:
-        linear-gradient(115deg, rgba(15, 118, 110, 0.12), transparent 34%),
-        linear-gradient(245deg, rgba(239, 91, 76, 0.14), transparent 30%),
-        var(--paper);
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
       min-height: 100vh;
+      overflow-x: hidden;
     }
 
-    img {
-      display: block;
-      max-width: 100%;
-    }
+    img { display: block; max-width: 100%; }
+    a   { color: inherit; text-decoration: none; }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(var(--max-width), calc(100% - 36px));
-      margin: 0 auto;
-    }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      border-bottom: 1px solid rgba(21, 21, 21, 0.08);
-      background: rgba(247, 249, 248, 0.88);
-      backdrop-filter: blur(18px);
-    }
-
-    .nav {
-      min-height: 74px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 850;
-      letter-spacing: 0;
-    }
-
-    .brand img {
-      width: 46px;
-      height: 46px;
-      object-fit: cover;
-      border-radius: var(--radius);
-      border: 1px solid rgba(21, 21, 21, 0.12);
-      background: var(--surface);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      color: var(--ink-soft);
-      font-size: 14px;
-      font-weight: 750;
-    }
-
-    .nav-links a {
-      padding: 10px 12px;
-      border-radius: var(--radius);
-    }
-
-    .nav-links a:hover {
-      background: rgba(15, 118, 110, 0.1);
-      color: var(--teal-deep);
-    }
-
-    .hero {
-      padding: 58px 0 42px;
-    }
-
-    .hero-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.04fr) minmax(360px, 0.96fr);
-      gap: 34px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--teal-deep);
-      font-size: 13px;
-      font-weight: 850;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before {
+    /* ─── Dot grid overlay ─── */
+    body::before {
       content: "";
-      width: 34px;
-      height: 2px;
-      background: var(--coral);
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.09) 1px, transparent 1px);
+      background-size: 36px 36px;
+      pointer-events: none;
+      z-index: 0;
     }
 
-    h1 {
-      margin: 18px 0 18px;
-      max-width: 820px;
-      font-size: clamp(42px, 7vw, 82px);
-      line-height: 0.95;
-      letter-spacing: 0;
-      text-wrap: balance;
+    /* ─── Cursor spotlight ─── */
+    #cursor-glow {
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 1;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle at center,
+        rgba(0,229,160,0.07) 0%,
+        rgba(124,111,253,0.04) 35%,
+        transparent 70%);
+      transition: left 0.12s ease, top 0.12s ease;
+      will-change: left, top;
     }
 
-    .lead {
-      margin: 0;
-      max-width: 690px;
-      color: var(--ink-soft);
-      font-size: 18px;
-      line-height: 1.75;
-    }
-
-    .hero-actions,
-    .app-actions,
-    .footer-actions {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .hero-actions {
-      margin-top: 30px;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 0 18px;
-      border-radius: var(--radius);
-      border: 1px solid transparent;
-      font-size: 14px;
-      font-weight: 850;
-      transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 28px rgba(21, 21, 21, 0.14);
-    }
-
-    .button-primary {
-      color: #ffffff;
-      background: var(--teal-deep);
-    }
-
-    .button-secondary {
-      color: var(--ink);
-      background: var(--surface);
-      border-color: rgba(21, 21, 21, 0.16);
-    }
-
-    .hero-proof {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 34px;
-      max-width: 760px;
-    }
-
-    .proof-item {
-      border-top: 2px solid var(--ink);
-      padding-top: 12px;
-    }
-
-    .proof-item strong {
-      display: block;
-      font-size: 25px;
-      line-height: 1.1;
-    }
-
-    .proof-item span {
-      display: block;
-      margin-top: 6px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.45;
-    }
-
-    .showcase {
-      position: relative;
-      min-height: 540px;
-      border-radius: var(--radius);
-      overflow: hidden;
-      background:
-        linear-gradient(155deg, rgba(15, 118, 110, 0.95), rgba(12, 48, 47, 0.94)),
-        var(--teal-deep);
-      color: #ffffff;
-      box-shadow: var(--shadow);
-    }
-
-    .showcase-media {
+    /* ─── Hero canvas ─── */
+    #hero-canvas {
       position: absolute;
       inset: 0;
-    }
-
-    .showcase-media img {
       width: 100%;
       height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ─── Animated aurora blobs ─── */
+    @keyframes drift1 {
+      0%   { transform: translate(0,    0)    scale(1); }
+      33%  { transform: translate(60px, -40px) scale(1.12); }
+      66%  { transform: translate(-40px, 30px) scale(0.92); }
+      100% { transform: translate(0,    0)    scale(1); }
+    }
+    @keyframes drift2 {
+      0%   { transform: translate(0,    0)    scale(1); }
+      33%  { transform: translate(-50px, 50px) scale(1.08); }
+      66%  { transform: translate(40px, -30px) scale(0.94); }
+      100% { transform: translate(0,    0)    scale(1); }
+    }
+    @keyframes drift3 {
+      0%   { transform: translate(0, 0)    scale(1); }
+      50%  { transform: translate(30px, 60px) scale(1.1); }
+      100% { transform: translate(0, 0)    scale(1); }
+    }
+    @keyframes drift4 {
+      0%   { transform: translate(0, 0); }
+      40%  { transform: translate(-60px, -50px); }
+      100% { transform: translate(0, 0); }
+    }
+
+    /* ─── Navbar ─── */
+    .navbar {
+      background: rgba(12,12,15,0.85) !important;
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 0;
+    }
+    .navbar-brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--text) !important;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .navbar-brand img {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
       object-fit: cover;
-      opacity: 0.36;
-      filter: saturate(1.05) contrast(1.06);
+      border: 1px solid var(--border-hi);
+    }
+    .nav-link {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-soft) !important;
+      padding: 8px 14px !important;
+      border-radius: var(--radius-sm);
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-link:hover {
+      color: var(--text) !important;
+      background: rgba(255,255,255,0.06);
+    }
+    .btn-nav {
+      background: var(--mint);
+      color: #081a13 !important;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 9px 18px !important;
+      border-radius: 99px;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .btn-nav:hover { opacity: 0.88; transform: translateY(-1px); }
+    .navbar-toggler {
+      border: 1px solid var(--border-hi);
+      border-radius: var(--radius-xs);
+      padding: 6px 10px;
+    }
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(237,237,240,0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     }
 
-    .showcase-content {
+    /* ─── Glow blobs ─── */
+    .glow-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      pointer-events: none;
+      z-index: 0;
+      will-change: transform;
+    }
+
+    /* ─── Hero ─── */
+    .hero-section {
       position: relative;
-      z-index: 1;
-      min-height: 540px;
+      min-height: 100vh;
       display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      gap: 18px;
-      padding: 30px;
-      background: linear-gradient(180deg, rgba(10, 79, 73, 0.06), rgba(5, 24, 23, 0.84));
+      align-items: center;
+      padding: 120px 0 80px;
+      overflow: hidden;
     }
+    .hero-blob-1 {
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(0,229,160,0.22) 0%, transparent 70%);
+      top: -180px; left: -250px;
+      animation: drift1 14s ease-in-out infinite;
+    }
+    .hero-blob-2 {
+      width: 550px; height: 550px;
+      background: radial-gradient(circle, rgba(124,111,253,0.18) 0%, transparent 70%);
+      bottom: -100px; right: -150px;
+      animation: drift2 18s ease-in-out infinite;
+    }
+    .hero-blob-3 {
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(255,107,91,0.12) 0%, transparent 70%);
+      top: 40%; left: 45%;
+      animation: drift3 22s ease-in-out infinite;
+    }
+    .hero-section > .container { position: relative; z-index: 2; }
 
-    .showcase-kicker {
-      align-self: flex-start;
-      padding: 8px 10px;
-      border-radius: var(--radius);
-      color: #102522;
-      background: var(--lime);
+    .label-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 99px;
+      border: 1px solid var(--border-hi);
+      background: rgba(255,255,255,0.04);
       font-size: 12px;
-      font-weight: 900;
+      font-weight: 700;
+      letter-spacing: 0.8px;
       text-transform: uppercase;
+      color: var(--mint);
+      backdrop-filter: blur(8px);
+    }
+    .label-pill span.dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--mint);
     }
 
-    .showcase h2 {
-      margin: 0;
-      max-width: 420px;
-      font-size: clamp(34px, 5vw, 56px);
-      line-height: 0.98;
-      letter-spacing: 0;
+    .hero-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(48px, 7vw, 88px);
+      font-weight: 700;
+      line-height: 0.97;
+      letter-spacing: -2px;
+      color: var(--text);
+    }
+    .hero-title .grad {
+      background: linear-gradient(135deg, var(--mint) 0%, #00b4d8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-title .grad-coral {
+      background: linear-gradient(135deg, var(--coral) 0%, var(--gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
-    .showcase p {
-      margin: 0;
-      max-width: 430px;
-      color: rgba(255, 255, 255, 0.84);
-      line-height: 1.7;
+    .hero-lead {
+      font-size: 17px;
+      line-height: 1.85;
+      color: var(--text-soft);
+      max-width: 500px;
     }
 
-    .section {
-      padding: 46px 0;
+    /* Buttons */
+    .btn-mint {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 99px;
+      background: var(--mint);
+      color: #081a13;
+      font-weight: 700;
+      font-size: 15px;
+      border: none;
+      box-shadow: 0 0 32px rgba(0,229,160,0.30);
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .btn-mint:hover {
+      color: #081a13;
+      box-shadow: 0 0 48px rgba(0,229,160,0.50);
+      transform: translateY(-2px);
+    }
+    .btn-glass {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 26px;
+      border-radius: 99px;
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      font-weight: 700;
+      font-size: 15px;
+      border: 1px solid var(--border-hi);
+      backdrop-filter: blur(8px);
+      transition: background 0.25s, transform 0.25s;
+    }
+    .btn-glass:hover {
+      background: rgba(255,255,255,0.11);
+      color: var(--text);
+      transform: translateY(-2px);
+    }
+    .btn-coral {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 99px;
+      background: var(--coral);
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      border: none;
+      box-shadow: 0 0 32px rgba(255,107,91,0.30);
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .btn-coral:hover {
+      color: #fff;
+      box-shadow: 0 0 48px rgba(255,107,91,0.50);
+      transform: translateY(-2px);
     }
 
-    .section-header {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 28px;
-      margin-bottom: 24px;
+    /* Hero stats */
+    .hero-stats { border-top: 1px solid var(--border); padding-top: 32px; margin-top: 40px; }
+    .stat-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+    }
+    .stat-label { font-size: 13px; color: var(--text-muted); margin-top: 6px; line-height: 1.5; }
+    .stat-divider { width: 1px; background: var(--border); }
+
+    /* Showcase card */
+    .showcase-card {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--border-hi);
+      box-shadow: 0 0 0 1px rgba(0,229,160,0.08), 0 32px 80px rgba(0,0,0,0.5);
+      height: 520px;
+    }
+    .showcase-card img.bg-img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      opacity: 0.30;
+      filter: saturate(0.8);
+    }
+    .showcase-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(12,12,15,0.1) 0%, rgba(12,12,15,0.92) 75%);
+    }
+    .showcase-chip {
+      position: absolute; top: 20px; right: 20px; z-index: 2;
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 14px;
+      background: rgba(0,229,160,0.12);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(0,229,160,0.25);
+      border-radius: 99px;
+      color: var(--mint);
+      font-size: 12px; font-weight: 700;
+    }
+    .chip-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--mint);
+      animation: pulse 2s ease infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity:1; transform:scale(1); }
+      50%      { opacity:0.4; transform:scale(0.75); }
+    }
+    .showcase-body {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 32px; z-index: 2; color: var(--text);
+    }
+    .showcase-kicker {
+      display: inline-block;
+      background: var(--mint-dim);
+      border: 1px solid rgba(0,229,160,0.2);
+      color: var(--mint);
+      font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1px;
+      padding: 5px 12px; border-radius: 99px; margin-bottom: 14px;
+    }
+    .showcase-body h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(22px, 2.8vw, 34px);
+      font-weight: 700; line-height: 1.1; margin-bottom: 10px;
+    }
+    .showcase-body p { font-size: 14px; color: var(--text-soft); line-height: 1.75; margin: 0; }
+
+    /* ─── Sections ─── */
+    .section-py { padding: 100px 0; }
+
+    .section-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.4px;
+      color: var(--mint); margin-bottom: 14px;
+    }
+    .section-label::before {
+      content: "";
+      width: 20px; height: 2px; border-radius: 2px;
+      background: linear-gradient(90deg, var(--mint), var(--purple));
     }
 
     .section-title {
-      margin: 0;
-      font-size: clamp(30px, 4.6vw, 54px);
-      line-height: 1;
-      letter-spacing: 0;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(32px, 4.5vw, 52px);
+      font-weight: 700; line-height: 1.05; letter-spacing: -1px; color: var(--text);
     }
+    .section-copy { font-size: 17px; color: var(--text-soft); line-height: 1.85; }
 
-    .section-copy {
-      margin: 12px 0 0;
-      max-width: 700px;
-      color: var(--ink-soft);
-      line-height: 1.75;
-    }
+    /* Divider line */
+    .rule { border: none; border-top: 1px solid var(--border); margin: 0; }
 
-    .apps-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
+    /* ─── App cards ─── */
     .app-card {
-      display: grid;
-      grid-template-columns: 96px minmax(0, 1fr);
-      gap: 18px;
-      min-height: 100%;
-      padding: 20px;
-      border: 1px solid var(--line);
+      background: var(--bg-3);
+      border: 1px solid var(--border);
       border-radius: var(--radius);
-      background: rgba(255, 255, 255, 0.82);
-      box-shadow: 0 10px 30px rgba(21, 21, 21, 0.06);
-      transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+      padding: 26px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
     }
-
+    .app-card::before {
+      content: "";
+      position: absolute; inset: 0; border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(0,229,160,0.04) 0%, transparent 60%);
+      opacity: 0; transition: opacity 0.3s;
+    }
     .app-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(15, 118, 110, 0.35);
-      box-shadow: 0 18px 42px rgba(21, 21, 21, 0.11);
+      border-color: rgba(0,229,160,0.22);
+      transform: translateY(-6px);
+      box-shadow: 0 0 40px rgba(0,229,160,0.08), 0 24px 60px rgba(0,0,0,0.4);
     }
+    .app-card:hover::before { opacity: 1; }
 
     .app-icon {
-      width: 96px;
-      height: 96px;
-      border-radius: var(--radius);
+      width: 68px; height: 68px;
+      border-radius: 16px;
       object-fit: cover;
-      border: 1px solid rgba(21, 21, 21, 0.08);
-      background: var(--surface);
+      border: 1px solid var(--border-hi);
+      flex-shrink: 0;
     }
-
-    .app-meta {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
+    .app-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 18px; font-weight: 700;
+      letter-spacing: -0.3px; line-height: 1.2;
+      color: var(--text); margin-bottom: 6px;
     }
+    .app-desc { font-size: 14px; color: var(--text-soft); line-height: 1.75; flex: 1; }
 
     .tag {
-      display: inline-flex;
-      align-items: center;
-      min-height: 26px;
-      padding: 0 9px;
-      border-radius: var(--radius);
-      color: #ffffff;
-      background: var(--teal);
-      font-size: 11px;
-      font-weight: 900;
-      text-transform: uppercase;
+      display: inline-flex; align-items: center;
+      height: 22px; padding: 0 10px; border-radius: 99px;
+      font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
     }
+    .tag-mint   { background: var(--mint-dim);   color: var(--mint);   border: 1px solid rgba(0,229,160,0.18); }
+    .tag-coral  { background: var(--coral-dim);  color: var(--coral);  border: 1px solid rgba(255,107,91,0.18); }
+    .tag-purple { background: var(--purple-dim); color: var(--purple); border: 1px solid rgba(124,111,253,0.18); }
+    .tag-gold   { background: rgba(245,166,35,0.12); color: var(--gold); border: 1px solid rgba(245,166,35,0.18); }
 
-    .tag-coral {
-      background: var(--coral);
+    .status-dot {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12px; font-weight: 600; color: var(--text-muted);
     }
+    .status-dot::before {
+      content: ""; width: 6px; height: 6px; border-radius: 50%;
+      background: #22c55e; flex-shrink: 0;
+    }
+    .status-dot.soon::before { background: var(--gold); }
 
-    .tag-sky {
-      background: var(--sky);
-    }
+    .card-divider { border-top: 1px solid var(--border); margin-top: 18px; padding-top: 18px; }
 
-    .status {
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    .app-card h3 {
-      margin: 12px 0 8px;
-      font-size: 24px;
-      line-height: 1.12;
-      letter-spacing: 0;
-      overflow-wrap: anywhere;
-    }
-
-    .app-card p {
-      margin: 0;
-      color: var(--ink-soft);
-      font-size: 14px;
-      line-height: 1.7;
-    }
-
-    .app-actions {
-      margin-top: 18px;
-    }
-
-    .play-badge {
-      display: inline-flex;
-      align-items: center;
-      min-height: 48px;
-    }
-
-    .play-badge img {
-      width: 156px;
-      height: auto;
-    }
+    .play-badge img { width: 140px; height: auto; transition: opacity 0.2s; }
+    .play-badge:hover img { opacity: 0.75; }
 
     .text-link {
-      color: var(--teal-deep);
-      font-size: 14px;
-      font-weight: 850;
+      font-size: 13px; font-weight: 700;
+      color: var(--mint); display: inline-flex; align-items: center; gap: 4px;
+      transition: gap 0.2s;
     }
+    .text-link:hover { gap: 8px; }
 
-    .studio {
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.46);
+    /* ─── Studio / Values ─── */
+    .studio-section {
+      background: var(--bg-2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
     }
-
-    .studio-grid {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 34px;
-      align-items: start;
+    .studio-blob {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(124,111,253,0.12) 0%, transparent 70%);
+      top: -120px; right: -120px;
+      animation: drift4 20s ease-in-out infinite;
     }
-
-    .studio h2 {
-      margin: 0;
-      font-size: clamp(30px, 4.5vw, 52px);
-      line-height: 1.02;
-    }
-
-    .principles {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .principle {
-      min-height: 160px;
-      padding: 20px;
-      border: 1px solid var(--line);
+    .studio-section > .container { position: relative; z-index: 1; }
+    .principle-card {
+      background: var(--bg-3);
+      border: 1px solid var(--border);
       border-radius: var(--radius);
-      background: var(--surface);
+      padding: 24px;
+      height: 100%;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .principle-card:hover {
+      border-color: var(--border-hi);
+      transform: translateY(-3px);
+    }
+    .principle-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; margin-bottom: 16px;
+    }
+    .principle-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 8px;
+    }
+    .principle-text { font-size: 14px; color: var(--text-soft); line-height: 1.75; margin: 0; }
+
+    /* ─── Number marquee ─── */
+    .marquee-wrap {
+      overflow: hidden;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-2);
+      padding: 22px 0;
+    }
+    .marquee-track {
+      display: flex; gap: 48px;
+      width: max-content;
+      animation: marquee 22s linear infinite;
+    }
+    .marquee-track:hover { animation-play-state: paused; }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .marquee-item {
+      display: flex; align-items: center; gap: 14px;
+      white-space: nowrap; flex-shrink: 0;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 15px; font-weight: 600; color: var(--text-muted);
+    }
+    .marquee-item .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--mint); flex-shrink: 0; }
+
+    /* ─── Contact ─── */
+    .contact-card {
+      background: var(--bg-3);
+      border: 1px solid var(--border-hi);
+      border-radius: 24px;
+      padding: 56px;
+      position: relative; overflow: hidden;
+      box-shadow: 0 0 80px rgba(0,229,160,0.06);
+    }
+    .contact-card::after {
+      content: "";
+      position: absolute; top: -100px; right: -100px;
+      width: 320px; height: 320px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,229,160,0.10), transparent 70%);
+      pointer-events: none;
+    }
+    .contact-card h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(28px, 3.8vw, 48px);
+      font-weight: 700; letter-spacing: -0.8px; color: var(--text); margin-bottom: 14px;
     }
 
-    .principle strong {
-      display: block;
-      margin-bottom: 10px;
-      font-size: 18px;
+    /* ─── Footer ─── */
+    .footer-card {
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 56px;
+      position: relative; overflow: hidden;
     }
-
-    .principle p {
-      margin: 0;
-      color: var(--ink-soft);
-      line-height: 1.7;
+    .footer-card::before {
+      content: "";
+      position: absolute; bottom: -120px; left: -120px;
+      width: 400px; height: 400px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(124,111,253,0.12), transparent 70%);
+      pointer-events: none;
     }
-
-    .footer {
-      padding: 42px 0 60px;
+    .footer-card h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(26px, 3.5vw, 42px);
+      font-weight: 700; letter-spacing: -0.6px; color: var(--text); margin-bottom: 10px;
     }
-
-    .contact-panel {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 24px;
-      align-items: center;
-      padding: 28px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--surface);
-      box-shadow: 0 14px 38px rgba(21, 21, 21, 0.08);
+    .footer-card p { color: var(--text-soft); font-size: 16px; line-height: 1.8; }
+    .footer-sub {
+      font-size: 13px; color: var(--text-muted); margin-top: 28px;
+      border-top: 1px solid var(--border); padding-top: 24px;
     }
+    .footer-sub a { color: var(--mint); font-weight: 600; }
+    .footer-sub a:hover { text-decoration: underline; }
 
-    .contact-panel h2 {
-      margin: 0 0 10px;
-      font-size: clamp(30px, 4.5vw, 52px);
-      line-height: 1;
+    /* ─── Scroll reveal ─── */
+    .reveal {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity 0.65s cubic-bezier(.25,.46,.45,.94), transform 0.65s cubic-bezier(.25,.46,.45,.94);
     }
+    .reveal.visible { opacity: 1; transform: none; }
+    .rd1 { transition-delay: 80ms; }
+    .rd2 { transition-delay: 160ms; }
+    .rd3 { transition-delay: 240ms; }
+    .rd4 { transition-delay: 320ms; }
 
-    .contact-panel p {
-      margin: 0;
-      max-width: 680px;
-      color: var(--ink-soft);
-      line-height: 1.7;
+    /* ─── Responsive ─── */
+    @media (max-width: 768px) {
+      .hero-section { padding: 100px 0 60px; }
+      .contact-card, .footer-card { padding: 32px 24px; }
+      .section-py { padding: 72px 0; }
     }
-
-    .email-link {
-      display: inline-flex;
-      align-items: center;
-      min-height: 48px;
-      padding: 0 18px;
-      border-radius: var(--radius);
-      color: #ffffff;
-      background: var(--coral);
-      font-size: 14px;
-      font-weight: 850;
-      white-space: nowrap;
-    }
-
-    .footer-panel {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 24px;
-      align-items: center;
-      padding: 28px;
-      border-radius: var(--radius);
-      color: #ffffff;
-      background:
-        linear-gradient(120deg, rgba(15, 118, 110, 0.95), rgba(21, 21, 21, 0.96)),
-        var(--ink);
-    }
-
-    .footer-panel h2 {
-      margin: 0 0 8px;
-      font-size: clamp(26px, 4vw, 42px);
-      line-height: 1;
-    }
-
-    .footer-panel p {
-      margin: 0;
-      max-width: 700px;
-      color: rgba(255, 255, 255, 0.78);
-      line-height: 1.7;
-    }
-
-    .footer-panel .button-secondary {
-      color: #ffffff;
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.24);
-    }
-
-    @media (max-width: 960px) {
-      .hero-layout,
-      .studio-grid,
-      .contact-panel,
-      .footer-panel {
-        grid-template-columns: 1fr;
-      }
-
-      .showcase,
-      .showcase-content {
-        min-height: 460px;
-      }
-    }
-
-    @media (max-width: 760px) {
-      .container {
-        width: min(var(--max-width), calc(100% - 28px));
-      }
-
-      .site-header {
-        position: static;
-      }
-
-      .nav {
-        min-height: 68px;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .hero {
-        padding-top: 36px;
-      }
-
-      .hero-layout {
-        gap: 26px;
-      }
-
-      .hero-proof,
-      .apps-grid,
-      .principles {
-        grid-template-columns: 1fr;
-      }
-
-      .section-header {
-        display: block;
-      }
-
-      .app-card {
-        grid-template-columns: 74px minmax(0, 1fr);
-        gap: 14px;
-        padding: 16px;
-      }
-
-      .app-icon {
-        width: 74px;
-        height: 74px;
-      }
-
-      .app-card h3 {
-        font-size: 21px;
-      }
-
-      .play-badge img {
-        width: 142px;
-      }
-
-      .showcase,
-      .showcase-content {
-        min-height: 420px;
-      }
-
-      .showcase-content,
-      .footer-panel {
-        padding: 22px;
-      }
+    @media (max-width: 480px) {
+      .hero-title { letter-spacing: -1.2px; }
     }
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="#top" aria-label="GoldenKing Apps home">
+
+  <!-- Cursor spotlight -->
+  <div id="cursor-glow" aria-hidden="true"></div>
+
+  <!-- ═══════ NAVBAR ═══════ -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#top">
         <img src="assets/gk.webp" alt="GoldenKing Apps" />
-        <span>GoldenKing Apps</span>
+        GoldenKing Apps
       </a>
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#apps">Apps</a>
-        <a href="#studio">Studio</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#mainNav" aria-controls="mainNav"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
+          <li class="nav-item"><a class="nav-link" href="#apps">Apps</a></li>
+          <li class="nav-item"><a class="nav-link" href="#studio">Studio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+            <a class="nav-link btn-nav" href="https://play.google.com/store/search?q=pub:GoldenKing%20Apps&c=apps"
+               target="_blank" rel="noopener">
+              Google Play &nbsp;<i class="bi bi-arrow-up-right"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </header>
+  </nav>
 
   <main id="top">
-    <section class="hero">
-      <div class="container hero-layout">
-        <div>
-          <div class="eyebrow">Android app studio</div>
-          <h1>Premium apps for privacy, wellness, and everyday learning.</h1>
-          <p class="lead">
-            GoldenKing Apps creates focused Android experiences with clean interfaces, useful content, and simple paths from first open to daily use.
-          </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#apps">Explore apps</a>
-            <a class="button button-secondary" href="https://play.google.com/store/search?q=pub:GoldenKing%20Apps&amp;c=apps" target="_blank" rel="noopener">Open Google Play</a>
-          </div>
-          <div class="hero-proof" aria-label="Portfolio highlights">
-            <div class="proof-item">
-              <strong>5+</strong>
-              <span>Mobile products across privacy, health, yoga, and reference.</span>
-            </div>
-            <div class="proof-item">
-              <strong>Clean</strong>
-              <span>Interfaces built around direct navigation and readable content.</span>
-            </div>
-            <div class="proof-item">
-              <strong>Live</strong>
-              <span>Apps published on Google Play with more releases in progress.</span>
-            </div>
-          </div>
-        </div>
 
-        <div class="showcase" aria-label="Featured app">
-          <div class="showcase-media">
-            <img src="assets/ss_app.webp" alt="Sun Salutation app artwork" />
-          </div>
-          <div class="showcase-content">
-            <span class="showcase-kicker">Featured release</span>
-            <h2>Sun Salutation for modern daily practice.</h2>
-            <p>
-              Guided Surya Namaskar routines for energy, strength, flexibility, and better morning momentum.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="apps">
+    <!-- ═══════ HERO ═══════ -->
+    <section class="hero-section">
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
+      <div class="glow-blob hero-blob-1"></div>
+      <div class="glow-blob hero-blob-2"></div>
+      <div class="glow-blob hero-blob-3"></div>
       <div class="container">
-        <div class="section-header">
-          <div>
-            <h2 class="section-title">App Portfolio</h2>
-            <p class="section-copy">
-              A compact collection of Android apps serving privacy, nutrition, mental wellness, digestive health, and daily yoga practice.
+        <div class="row align-items-center g-5">
+
+          <div class="col-lg-7">
+            <div class="label-pill reveal mb-4">
+              <span class="dot"></span> Android App Studio
+            </div>
+            <h1 class="hero-title reveal rd1 mb-4">
+              Apps built for<br>
+              <span class="grad">privacy</span>,<br>
+              <span class="grad-coral">wellness</span> &amp; life.
+            </h1>
+            <p class="hero-lead reveal rd2 mb-4">
+              GoldenKing Apps creates focused Android experiences with clean interfaces, useful content, and simple paths from first open to daily use.
+            </p>
+            <div class="d-flex flex-wrap gap-3 reveal rd3">
+              <a class="btn-mint" href="#apps">Explore apps <i class="bi bi-arrow-right"></i></a>
+              <a class="btn-glass" href="https://play.google.com/store/search?q=pub:GoldenKing%20Apps&c=apps"
+                 target="_blank" rel="noopener">Google Play <i class="bi bi-arrow-up-right"></i></a>
+            </div>
+
+            <div class="hero-stats reveal rd4">
+              <div class="row g-0">
+                <div class="col-4">
+                  <div class="stat-num" data-count="5">0</div>
+                  <div class="stat-label">Apps live on<br>Google Play</div>
+                </div>
+                <div class="col-auto stat-divider mx-3 mx-lg-4"></div>
+                <div class="col-4">
+                  <div class="stat-num">Clean</div>
+                  <div class="stat-label">UI built for<br>direct navigation</div>
+                </div>
+                <div class="col-auto stat-divider mx-3 mx-lg-4"></div>
+                <div class="col">
+                  <div class="stat-num">Live</div>
+                  <div class="stat-label">Published &amp;<br>growing</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5 reveal rd2">
+            <div class="showcase-card">
+              <img class="bg-img" src="assets/ss_app.webp" alt="Sun Salutation app" />
+              <div class="showcase-overlay"></div>
+              <div class="showcase-chip">
+                <span class="chip-dot"></span> Launching soon
+              </div>
+              <div class="showcase-body">
+                <span class="showcase-kicker">Featured release</span>
+                <h2>Sun Salutation for modern daily practice.</h2>
+                <p>Guided Surya Namaskar routines for energy, strength, flexibility, and better morning momentum.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ MARQUEE ═══════ -->
+    <div class="marquee-wrap">
+      <div class="marquee-track">
+        <!-- duplicate for infinite loop -->
+        <div class="marquee-item"><span class="dot"></span> Privacy &amp; Security</div>
+        <div class="marquee-item"><span class="dot"></span> Health &amp; Nutrition</div>
+        <div class="marquee-item"><span class="dot"></span> Mental Wellness</div>
+        <div class="marquee-item"><span class="dot"></span> Digestive Health</div>
+        <div class="marquee-item"><span class="dot"></span> Daily Yoga</div>
+        <div class="marquee-item"><span class="dot"></span> Android First</div>
+        <div class="marquee-item"><span class="dot"></span> Google Play</div>
+        <div class="marquee-item"><span class="dot"></span> Clean Interfaces</div>
+        <div class="marquee-item"><span class="dot"></span> Privacy &amp; Security</div>
+        <div class="marquee-item"><span class="dot"></span> Health &amp; Nutrition</div>
+        <div class="marquee-item"><span class="dot"></span> Mental Wellness</div>
+        <div class="marquee-item"><span class="dot"></span> Digestive Health</div>
+        <div class="marquee-item"><span class="dot"></span> Daily Yoga</div>
+        <div class="marquee-item"><span class="dot"></span> Android First</div>
+        <div class="marquee-item"><span class="dot"></span> Google Play</div>
+        <div class="marquee-item"><span class="dot"></span> Clean Interfaces</div>
+      </div>
+    </div>
+
+    <!-- ═══════ APPS ═══════ -->
+    <section class="section-py" id="apps">
+      <div class="container">
+
+        <div class="row align-items-end mb-5 reveal">
+          <div class="col-lg-8">
+            <div class="section-label">App Portfolio</div>
+            <h2 class="section-title mb-3">Five apps. One focused studio.</h2>
+            <p class="section-copy mb-0">
+              A compact collection of Android apps serving privacy, nutrition, mental wellness, digestive health, and daily yoga.
             </p>
           </div>
-          <a class="button button-secondary" href="https://play.google.com/store/search?q=pub:GoldenKing%20Apps&amp;c=apps" target="_blank" rel="noopener">Developer page</a>
+          <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+            <a class="btn-glass" href="https://play.google.com/store/search?q=pub:GoldenKing%20Apps&c=apps"
+               target="_blank" rel="noopener" style="font-size:14px;padding:11px 22px;">
+              Developer page <i class="bi bi-arrow-up-right"></i>
+            </a>
+          </div>
         </div>
 
-        <div class="apps-grid">
-          <article class="app-card">
-            <img class="app-icon" src="assets/kl.png" alt="Knock Lock Screen app icon" />
-            <div>
-              <div class="app-meta">
-                <span class="tag">Security</span>
-                <span class="status">Live on Google Play</span>
+        <div class="row g-4">
+
+          <div class="col-md-6 reveal">
+            <div class="app-card">
+              <div class="d-flex gap-3 align-items-start mb-3">
+                <img class="app-icon" src="assets/kl.png" alt="Knock Lock Screen" />
+                <div>
+                  <div class="d-flex flex-wrap gap-2 align-items-center mb-2">
+                    <span class="tag tag-mint">Security</span>
+                    <span class="status-dot">Live on Google Play</span>
+                  </div>
+                  <div class="app-name">Knock Lock Screen — Applock</div>
+                </div>
               </div>
-              <h3>Knock Lock Screen - Applock</h3>
-              <p>
-                A knock-based lock screen experience for private, quick, and memorable phone access.
-              </p>
-              <div class="app-actions">
-                <a class="play-badge" href="https://play.google.com/store/apps/details?id=com.knocklock.applock" target="_blank" rel="noopener">
+              <p class="app-desc">A knock-based lock screen experience for private, quick, and memorable phone access without PINs or patterns.</p>
+              <div class="d-flex align-items-center gap-3 card-divider">
+                <a class="play-badge" href="https://play.google.com/store/apps/details?id=com.knocklock.applock"
+                   target="_blank" rel="noopener">
                   <img src="assets/badge_playstore.png" alt="Get it on Google Play" />
                 </a>
-                <a class="text-link" href="https://play.google.com/store/apps/details?id=com.knocklock.applock" target="_blank" rel="noopener">View listing</a>
+                <a class="text-link" href="https://play.google.com/store/apps/details?id=com.knocklock.applock"
+                   target="_blank" rel="noopener">View listing <i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
-          </article>
+          </div>
 
-          <article class="app-card">
-            <img class="app-icon" src="assets/hn.png" alt="Health and Nutrition Guide app icon" />
-            <div>
-              <div class="app-meta">
-                <span class="tag tag-coral">Nutrition</span>
-                <span class="status">Live on Google Play</span>
+          <div class="col-md-6 reveal rd1">
+            <div class="app-card">
+              <div class="d-flex gap-3 align-items-start mb-3">
+                <img class="app-icon" src="assets/hn.png" alt="Health and Nutrition Guide" />
+                <div>
+                  <div class="d-flex flex-wrap gap-2 align-items-center mb-2">
+                    <span class="tag tag-coral">Nutrition</span>
+                    <span class="status-dot">Live on Google Play</span>
+                  </div>
+                  <div class="app-name">Health and Nutrition Guide</div>
+                </div>
               </div>
-              <h3>Health and Nutrition Guide</h3>
-              <p>
-                Food guidance and nutrition basics for daily choices, healthier routines, and long-term balance.
-              </p>
-              <div class="app-actions">
-                <a class="play-badge" href="https://play.google.com/store/apps/details?id=knocklock.health.nutrition.foodguide.nutritionsforall.healthyfood" target="_blank" rel="noopener">
+              <p class="app-desc">Food guidance and nutrition basics for daily choices, healthier routines, and long-term balance.</p>
+              <div class="d-flex align-items-center gap-3 card-divider">
+                <a class="play-badge" href="https://play.google.com/store/apps/details?id=knocklock.health.nutrition.foodguide.nutritionsforall.healthyfood"
+                   target="_blank" rel="noopener">
                   <img src="assets/badge_playstore.png" alt="Get it on Google Play" />
                 </a>
-                <a class="text-link" href="https://play.google.com/store/apps/details?id=knocklock.health.nutrition.foodguide.nutritionsforall.healthyfood" target="_blank" rel="noopener">View listing</a>
+                <a class="text-link" href="https://play.google.com/store/apps/details?id=knocklock.health.nutrition.foodguide.nutritionsforall.healthyfood"
+                   target="_blank" rel="noopener">View listing <i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
-          </article>
+          </div>
 
-          <article class="app-card">
-            <img class="app-icon" src="assets/md.png" alt="Mental Disorders and Treatments app icon" />
-            <div>
-              <div class="app-meta">
-                <span class="tag tag-sky">Wellness</span>
-                <span class="status">Live on Google Play</span>
+          <div class="col-md-6 reveal rd2">
+            <div class="app-card">
+              <div class="d-flex gap-3 align-items-start mb-3">
+                <img class="app-icon" src="assets/md.png" alt="Mental Disorders and Treatments" />
+                <div>
+                  <div class="d-flex flex-wrap gap-2 align-items-center mb-2">
+                    <span class="tag tag-purple">Wellness</span>
+                    <span class="status-dot">Live on Google Play</span>
+                  </div>
+                  <div class="app-name">Mental Disorders &amp; Treatments</div>
+                </div>
               </div>
-              <h3>Mental Disorders &amp; Treatments</h3>
-              <p>
-                Structured reference content around symptoms, prevention, and natural support approaches.
-              </p>
-              <div class="app-actions">
-                <a class="play-badge" href="https://play.google.com/store/apps/details?id=mental.disorders.treatments" target="_blank" rel="noopener">
+              <p class="app-desc">Structured reference content around symptoms, prevention, and natural support approaches for mental health.</p>
+              <div class="d-flex align-items-center gap-3 card-divider">
+                <a class="play-badge" href="https://play.google.com/store/apps/details?id=mental.disorders.treatments"
+                   target="_blank" rel="noopener">
                   <img src="assets/badge_playstore.png" alt="Get it on Google Play" />
                 </a>
-                <a class="text-link" href="https://play.google.com/store/apps/details?id=mental.disorders.treatments" target="_blank" rel="noopener">View listing</a>
+                <a class="text-link" href="https://play.google.com/store/apps/details?id=mental.disorders.treatments"
+                   target="_blank" rel="noopener">View listing <i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
-          </article>
+          </div>
 
-          <article class="app-card">
-            <img class="app-icon" src="assets/sd.png" alt="All Stomach Diseases and Treatment app icon" />
-            <div>
-              <div class="app-meta">
-                <span class="tag">Reference</span>
-                <span class="status">Live on Google Play</span>
+          <div class="col-md-6 reveal rd3">
+            <div class="app-card">
+              <div class="d-flex gap-3 align-items-start mb-3">
+                <img class="app-icon" src="assets/sd.png" alt="All Stomach Diseases and Treatment" />
+                <div>
+                  <div class="d-flex flex-wrap gap-2 align-items-center mb-2">
+                    <span class="tag tag-mint">Reference</span>
+                    <span class="status-dot">Live on Google Play</span>
+                  </div>
+                  <div class="app-name">All Stomach Diseases &amp; Treatment</div>
+                </div>
               </div>
-              <h3>All Stomach Diseases &amp; Treatment</h3>
-              <p>
-                Digestive health information and practical educational content for clearer understanding.
-              </p>
-              <div class="app-actions">
-                <a class="play-badge" href="https://play.google.com/store/apps/details?id=stomach.diseases.treatment" target="_blank" rel="noopener">
+              <p class="app-desc">Digestive health information and practical educational content for clearer understanding of gastric conditions.</p>
+              <div class="d-flex align-items-center gap-3 card-divider">
+                <a class="play-badge" href="https://play.google.com/store/apps/details?id=stomach.diseases.treatment"
+                   target="_blank" rel="noopener">
                   <img src="assets/badge_playstore.png" alt="Get it on Google Play" />
                 </a>
-                <a class="text-link" href="https://play.google.com/store/apps/details?id=stomach.diseases.treatment" target="_blank" rel="noopener">View listing</a>
+                <a class="text-link" href="https://play.google.com/store/apps/details?id=stomach.diseases.treatment"
+                   target="_blank" rel="noopener">View listing <i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
-          </article>
+          </div>
 
-          <article class="app-card">
-            <img class="app-icon" src="assets/ss_app.webp" alt="Sun Salutation app artwork" />
-            <div>
-              <div class="app-meta">
-                <span class="tag tag-coral">Yoga</span>
-                <span class="status">Launching soon</span>
-              </div>
-              <h3>Sun Salutation</h3>
-              <p>
-                A Surya Namaskar companion for guided daily movement, strength, flexibility, and energy.
-              </p>
-              <div class="app-actions">
-                <a class="button button-secondary" href="#contact">Launch updates</a>
+          <div class="col-12 reveal rd4">
+            <div class="app-card flex-row gap-4" style="flex-direction:row!important;align-items:flex-start;">
+              <img class="app-icon" src="assets/ss_app.webp" alt="Sun Salutation" style="flex-shrink:0;" />
+              <div class="flex-grow-1">
+                <div class="d-flex flex-wrap gap-2 align-items-center mb-2">
+                  <span class="tag tag-coral">Yoga</span>
+                  <span class="status-dot soon">Launching soon</span>
+                </div>
+                <div class="app-name">Sun Salutation</div>
+                <p class="app-desc mt-1 mb-3">A Surya Namaskar companion for guided daily movement, strength, flexibility, and sustainable morning energy. Sign up to be notified at launch.</p>
+                <a class="btn-glass" href="#contact" style="font-size:13px;padding:10px 20px;">Get launch updates</a>
               </div>
             </div>
-          </article>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <section class="section studio" id="studio">
-      <div class="container studio-grid">
-        <div>
-          <div class="eyebrow">Our focus</div>
-          <h2>Useful products with polished presentation.</h2>
-          <p class="section-copy">
-            The portfolio is shaped around practical needs: privacy, self-care, health education, and simple routines that work on everyday Android devices.
-          </p>
+    <hr class="rule" />
+
+    <!-- ═══════ STUDIO ═══════ -->
+    <section class="studio-section section-py" id="studio">
+      <div class="glow-blob studio-blob"></div>
+      <div class="container">
+        <div class="row g-5 align-items-start">
+
+          <div class="col-lg-5 reveal">
+            <div class="section-label">Our focus</div>
+            <h2 class="section-title mb-4">Useful products.<br>Polished delivery.</h2>
+            <p class="section-copy mb-4">
+              The portfolio is shaped around practical needs — privacy, self-care, health education, and simple routines that work on everyday Android devices.
+            </p>
+            <a class="btn-mint" href="#apps" style="width:fit-content;">
+              View all apps <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="row g-3">
+              <div class="col-sm-6 reveal rd1">
+                <div class="principle-card">
+                  <div class="principle-icon" style="background:var(--mint-dim);">🎯</div>
+                  <div class="principle-title">Clear paths</div>
+                  <p class="principle-text">Every app is organized around fast discovery, readable screens, and simple one-tap actions.</p>
+                </div>
+              </div>
+              <div class="col-sm-6 reveal rd2">
+                <div class="principle-card">
+                  <div class="principle-icon" style="background:var(--coral-dim);">✨</div>
+                  <div class="principle-title">Premium surfaces</div>
+                  <p class="principle-text">Strong spacing, crisp edges, and focused contrast deliver a refined, high-quality feel.</p>
+                </div>
+              </div>
+              <div class="col-sm-6 reveal rd3">
+                <div class="principle-card">
+                  <div class="principle-icon" style="background:rgba(245,166,35,0.12);">📖</div>
+                  <div class="principle-title">Practical content</div>
+                  <p class="principle-text">Reference apps are written for users who want direct information without noise.</p>
+                </div>
+              </div>
+              <div class="col-sm-6 reveal rd4">
+                <div class="principle-card">
+                  <div class="principle-icon" style="background:var(--purple-dim);">📱</div>
+                  <div class="principle-title">Android first</div>
+                  <p class="principle-text">Built for Google Play distribution with a clean web presence and easy app sharing.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <div class="principles">
-          <div class="principle">
-            <strong>Clear paths</strong>
-            <p>Every app is organized around fast discovery, readable screens, and simple actions.</p>
-          </div>
-          <div class="principle">
-            <strong>Premium surfaces</strong>
-            <p>Visual systems use strong spacing, crisp edges, and focused contrast for a more refined feel.</p>
-          </div>
-          <div class="principle">
-            <strong>Practical content</strong>
-            <p>Reference apps are written for users who want direct information without clutter.</p>
-          </div>
-          <div class="principle">
-            <strong>Android first</strong>
-            <p>The portfolio is built for Google Play distribution, static web presence, and easy sharing.</p>
+      </div>
+    </section>
+
+    <hr class="rule" />
+
+    <!-- ═══════ CONTACT ═══════ -->
+    <section class="section-py" id="contact">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-8">
+              <div class="section-label">Get in touch</div>
+              <h2>Need support or app information?</h2>
+              <p class="section-copy mb-0">
+                For app support, feedback, listing questions, and release updates, contact the GoldenKing Apps team directly by email.
+              </p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <a class="btn-coral" href="mailto:help.knocklock@gmail.com">
+                <i class="bi bi-envelope"></i> Email us
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="contact">
-      <div class="container contact-panel">
-        <div>
-          <div class="eyebrow">Contact us</div>
-          <h2>Need support or app information?</h2>
-          <p>
-            For app support, feedback, listing questions, and release updates, contact the GoldenKing Apps team by email.
-          </p>
-        </div>
-        <a class="email-link" href="mailto:help.knocklock@gmail.com">help.knocklock@gmail.com</a>
-      </div>
-    </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-panel">
-      <div>
-        <h2>Explore GoldenKing Apps on Google Play.</h2>
-        <p>
-          Browse published apps, install the latest releases, and follow upcoming Android products from the studio.
-        </p>
-      </div>
-      <div class="footer-actions">
-        <a class="button button-secondary" href="https://play.google.com/store/search?q=pub:GoldenKing%20Apps&amp;c=apps" target="_blank" rel="noopener">Open Google Play</a>
-        <a class="button button-secondary" href="#top">Back to top</a>
+  <!-- ═══════ FOOTER ═══════ -->
+  <footer class="pb-5">
+    <div class="container">
+      <div class="footer-card reveal">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-7">
+            <h2>Explore GoldenKing Apps on Google Play.</h2>
+            <p class="mb-0">Browse published apps, install the latest releases, and follow upcoming Android products from the studio.</p>
+          </div>
+          <div class="col-lg-5 d-flex flex-wrap gap-2 justify-content-lg-end">
+            <a class="btn-mint" href="https://play.google.com/store/search?q=pub:GoldenKing%20Apps&c=apps"
+               target="_blank" rel="noopener">
+              Open Google Play <i class="bi bi-arrow-up-right"></i>
+            </a>
+            <a class="btn-glass" href="#top">Back to top</a>
+          </div>
+        </div>
+        <div class="footer-sub d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-2">
+          <span>&copy; 2025 GoldenKing Apps. All rights reserved.</span>
+          <span>Contact: <a href="mailto:help.knocklock@gmail.com">help.knocklock@gmail.com</a></span>
+        </div>
       </div>
     </div>
   </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    /* ── 1. Scroll reveal ── */
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.10 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    /* ── 2. Counter animation ── */
+    document.querySelectorAll('[data-count]').forEach(el => {
+      const io = new IntersectionObserver(([e]) => {
+        if (!e.isIntersecting) return;
+        const target = +el.dataset.count, dur = 1000, t0 = performance.now();
+        const tick = now => {
+          const p = Math.min((now - t0) / dur, 1);
+          el.textContent = Math.round((1 - Math.pow(1 - p, 3)) * target) + '+';
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+        io.unobserve(el);
+      }, { threshold: 0.5 });
+      io.observe(el);
+    });
+
+    /* ── 3. Cursor spotlight ── */
+    const cursorGlow = document.getElementById('cursor-glow');
+    let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
+    let glowX = mouseX, glowY = mouseY;
+    document.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; });
+    (function animateGlow() {
+      glowX += (mouseX - glowX) * 0.08;
+      glowY += (mouseY - glowY) * 0.08;
+      cursorGlow.style.left = glowX + 'px';
+      cursorGlow.style.top  = glowY + 'px';
+      requestAnimationFrame(animateGlow);
+    })();
+
+    /* ── 4. Particle network canvas ── */
+    (function () {
+      const canvas = document.getElementById('hero-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let W, H, particles, ripples = [];
+
+      const COLORS = [
+        [0, 229, 160],   // mint
+        [124, 111, 253], // purple
+        [255, 107, 91],  // coral
+      ];
+
+      const resize = () => {
+        W = canvas.width  = canvas.offsetWidth;
+        H = canvas.height = canvas.offsetHeight;
+      };
+      window.addEventListener('resize', resize, { passive: true });
+      resize();
+
+      const rand = (a, b) => a + Math.random() * (b - a);
+
+      const mkParticle = () => {
+        const c = COLORS[Math.floor(Math.random() * COLORS.length)];
+        return {
+          x: rand(0, W), y: rand(0, H),
+          vx: rand(-0.28, 0.28), vy: rand(-0.28, 0.28),
+          r: rand(1.2, 2.8),
+          alpha: rand(0.35, 0.75),
+          color: c,
+        };
+      };
+
+      const COUNT = Math.min(90, Math.floor(W * H / 9000));
+      particles = Array.from({ length: COUNT }, mkParticle);
+
+      /* Click ripple */
+      canvas.addEventListener('click', e => {
+        const rect = canvas.getBoundingClientRect();
+        ripples.push({ x: e.clientX - rect.left, y: e.clientY - rect.top, r: 0, alpha: 0.6 });
+      });
+
+      const MAX_DIST = 160;
+
+      const draw = () => {
+        ctx.clearRect(0, 0, W, H);
+
+        /* Ripples */
+        ripples = ripples.filter(rp => rp.alpha > 0.01);
+        ripples.forEach(rp => {
+          rp.r += 2.4; rp.alpha *= 0.94;
+          ctx.beginPath();
+          ctx.arc(rp.x, rp.y, rp.r, 0, Math.PI * 2);
+          ctx.strokeStyle = `rgba(0,229,160,${rp.alpha})`;
+          ctx.lineWidth = 1.5;
+          ctx.stroke();
+        });
+
+        /* Lines between close particles */
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < MAX_DIST) {
+              const t = 1 - dist / MAX_DIST;
+              const [r, g, b] = particles[i].color;
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.strokeStyle = `rgba(${r},${g},${b},${t * 0.22})`;
+              ctx.lineWidth = t * 1.2;
+              ctx.stroke();
+            }
+          }
+        }
+
+        /* Dots */
+        particles.forEach(p => {
+          /* Drift */
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+          if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+
+          const [r, g, b] = p.color;
+          /* Glow */
+          const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 6);
+          grad.addColorStop(0, `rgba(${r},${g},${b},${p.alpha})`);
+          grad.addColorStop(1, `rgba(${r},${g},${b},0)`);
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r * 6, 0, Math.PI * 2);
+          ctx.fillStyle = grad;
+          ctx.fill();
+
+          /* Core dot */
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(${r},${g},${b},${p.alpha})`;
+          ctx.fill();
+        });
+
+        requestAnimationFrame(draw);
+      };
+      draw();
+    })();
+  </script>
 </body>
 </html>
