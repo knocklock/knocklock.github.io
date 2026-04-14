@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GoldenKing Apps</title>
+  <meta
+    name="description"
+    content="GoldenKing Apps builds premium mobile experiences across wellness, security, and self-improvement."
+  />
+  <style>
+    :root {
+      --bg: #0b0908;
+      --bg-soft: #15110f;
+      --surface: rgba(255, 255, 255, 0.06);
+      --surface-2: rgba(255, 255, 255, 0.04);
+      --border: rgba(255, 255, 255, 0.1);
+      --text: #fff7f1;
+      --muted: rgba(255, 247, 241, 0.72);
+      --muted-2: rgba(255, 247, 241, 0.52);
+      --accent: #ff8a3d;
+      --accent-2: #ffb560;
+      --accent-deep: #dd6220;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
+      --radius-xl: 36px;
+      --radius-lg: 28px;
+      --radius-md: 20px;
+      --max-width: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top center, rgba(255, 138, 61, 0.18), transparent 28%),
+        radial-gradient(circle at 12% 18%, rgba(255, 181, 96, 0.12), transparent 20%),
+        linear-gradient(180deg, #17110d 0%, #0b0908 55%, #070605 100%);
+      min-height: 100vh;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(18px);
+      background: rgba(11, 9, 8, 0.55);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-logo {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      object-fit: cover;
+      box-shadow: 0 10px 24px rgba(255, 138, 61, 0.24);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 44px 0 28px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .hero-copy,
+    .hero-feature,
+    .section-card,
+    .app-card,
+    .footer-card {
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, var(--surface), var(--surface-2));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+    }
+
+    .hero-copy,
+    .hero-feature,
+    .section-card,
+    .footer-card {
+      border-radius: var(--radius-xl);
+    }
+
+    .hero-copy {
+      position: relative;
+      overflow: hidden;
+      padding: 42px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(255, 138, 61, 0.12);
+      border: 1px solid rgba(255, 181, 96, 0.26);
+      color: #ffd5b0;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 18px 0 14px;
+      font-size: clamp(42px, 7vw, 74px);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      max-width: 760px;
+    }
+
+    .hero-copy p {
+      margin: 0;
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 20px;
+      border-radius: 18px;
+      font-weight: 800;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #311406;
+      box-shadow: 0 18px 36px rgba(255, 138, 61, 0.26);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: var(--text);
+    }
+
+    .hero-stats {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .stat {
+      padding: 18px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 30px;
+      letter-spacing: -0.05em;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted-2);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .hero-feature {
+      padding: 20px;
+      display: flex;
+    }
+
+    .featured {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      border-radius: 30px;
+      padding: 24px;
+      background:
+        radial-gradient(circle at 50% 18%, rgba(255, 231, 205, 0.34), transparent 26%),
+        linear-gradient(180deg, #ffba69 0%, #ff9447 42%, #d45d1f 100%);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      color: white;
+      min-height: 100%;
+    }
+
+    .featured::after {
+      content: "";
+      position: absolute;
+      inset: auto auto -70px -50px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.12);
+      filter: blur(10px);
+    }
+
+    .feature-chip {
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .featured h2 {
+      margin: 16px 0 10px;
+      font-size: clamp(30px, 4vw, 42px);
+      line-height: 1;
+      letter-spacing: -0.05em;
+      max-width: 320px;
+    }
+
+    .featured p {
+      margin: 0;
+      max-width: 320px;
+      color: rgba(255, 255, 255, 0.88);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .featured .btn {
+      margin-top: 20px;
+      background: rgba(255, 255, 255, 0.16);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      align-self: flex-start;
+    }
+
+    .featured-art {
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      width: min(48%, 240px);
+      border-radius: 28px;
+      box-shadow: 0 26px 50px rgba(0, 0, 0, 0.25);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .section {
+      padding: 28px 0;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4vw, 42px);
+      letter-spacing: -0.05em;
+      margin: 0;
+    }
+
+    .section-subtitle {
+      margin: 10px 0 0;
+      max-width: 760px;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .app-card {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 108px 1fr;
+      gap: 18px;
+      padding: 22px;
+      border-radius: var(--radius-lg);
+      transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .app-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 181, 96, 0.28);
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.05));
+    }
+
+    .app-icon {
+      width: 108px;
+      height: 108px;
+      border-radius: 24px;
+      object-fit: cover;
+      box-shadow: 0 20px 34px rgba(0, 0, 0, 0.28);
+    }
+
+    .app-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .app-tag {
+      display: inline-flex;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(255, 138, 61, 0.12);
+      color: #ffd5b0;
+      border: 1px solid rgba(255, 181, 96, 0.22);
+    }
+
+    .app-status {
+      font-size: 12px;
+      font-weight: 700;
+      color: rgba(255, 247, 241, 0.7);
+    }
+
+    .app-card h3 {
+      margin: 12px 0 8px;
+      font-size: 24px;
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+
+    .app-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .app-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .play-badge img {
+      height: 52px;
+      width: auto;
+    }
+
+    .inline-link {
+      font-size: 14px;
+      font-weight: 700;
+      color: #ffd9b8;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .section-card {
+      padding: 26px;
+    }
+
+    .section-card h3 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      letter-spacing: -0.04em;
+    }
+
+    .section-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .pill {
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 181, 96, 0.18);
+      background: rgba(255, 138, 61, 0.08);
+      color: #ffe1c5;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .footer {
+      padding: 28px 0 60px;
+    }
+
+    .footer-card {
+      padding: 24px 26px;
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-brand {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 6px;
+    }
+
+    .footer-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .apps-grid,
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-art {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        width: 68%;
+        margin: 24px auto 0;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-copy,
+      .hero-feature,
+      .section-card,
+      .footer-card {
+        border-radius: 28px;
+      }
+
+      .hero-copy {
+        padding: 28px 22px;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .app-card {
+        grid-template-columns: 1fr;
+      }
+
+      .app-icon {
+        width: 92px;
+        height: 92px;
+      }
+
+      .footer-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">
+        <img class="brand-logo" src="assets/knocklock.png" alt="GoldenKing Apps logo" />
+        <span>GoldenKing Apps</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#apps">Apps</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Premium mobile experiences</div>
+          <h1>Apps designed to feel simple, useful, and polished.</h1>
+          <p>
+            GoldenKing Apps builds thoughtful products across wellness, security, self-improvement, and everyday utility — crafted with a clean visual language and a practical user-first approach.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#apps">Explore apps</a>
+            <a class="btn btn-secondary" href="https://play.google.com/store/search?q=pub:GoldenKing%20Apps&c=apps" target="_blank" rel="noopener">Google Play portfolio</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat">
+              <strong>5+</strong>
+              <span>Apps across wellness, education, and utility</span>
+            </div>
+            <div class="stat">
+              <strong>Clean</strong>
+              <span>Minimal interfaces with focused user flows</span>
+            </div>
+            <div class="stat">
+              <strong>Growing</strong>
+              <span>New app launches and premium redesigns in progress</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-feature">
+          <div class="featured">
+            <span class="feature-chip">Featured launch</span>
+            <h2>Sun Salutation</h2>
+            <p>
+              A premium Surya Namaskar experience for daily energy, fat burn, flexibility, and strength — built for modern routines.
+            </p>
+            <a class="btn" href="#apps">See portfolio</a>
+            <img class="featured-art" src="assets/knocklock.png" alt="Featured app artwork" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="apps">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Portfolio</h2>
+            <p class="section-subtitle">
+              Explore a curated set of apps created by GoldenKing Apps — from security tools to wellness products and educational experiences.
+            </p>
+          </div>
+        </div>
+
+        <div class="apps-grid">
+          <article class="app-card">
+            <img class="app-icon" src="assets/kl.png" alt="Knock Lock Screen icon" />
+            <div>
+              <div class="app-top">
+                <span class="app-tag">Security</span>
+                <span class="app-status">Live on Google Play</span>
+              </div>
+              <h3>Knock Lock Screen - Applock</h3>
+              <p>
+                Protect your device with a unique knock-based locking experience designed to feel clever, fast, and more private than traditional unlock methods.
+              </p>
+              <div class="app-actions">
+                <a class="play-badge" href="https://play.google.com/store/apps/details?id=com.knocklock.applock" target="_blank" rel="noopener">
+                  <img src="assets/badge_playstore.png" alt="Get it on Google Play" />
+                </a>
+                <a class="inline-link" href="https://play.google.com/store/apps/details?id=com.knocklock.applock" target="_blank" rel="noopener">View listing →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="app-card">
+            <img class="app-icon" src="assets/hn.png" alt="Health and Nutrition Guide icon" />
+            <div>
+              <div class="app-top">
+                <span class="app-tag">Health</span>
+                <span class="app-status">Live on Google Play</span>
+              </div>
+              <h3>Health and Nutrition Guide</h3>
+              <p>
+                Learn nutrition basics, food choices, and healthier daily habits through accessible guidance designed for long-term balance and everyday use.
+              </p>
+              <div class="app-actions">
+                <a class="play-badge" href="https://play.google.com/store/apps/details?id=knocklock.health.nutrition.foodguide.nutritionsforall.healthyfood" target="_blank" rel="noopener">
+                  <img src="assets/badge_playstore.png" alt="Get it on Google Play" />
+                </a>
+                <a class="inline-link" href="https://play.google.com/store/apps/details?id=knocklock.health.nutrition.foodguide.nutritionsforall.healthyfood" target="_blank" rel="noopener">View listing →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="app-card">
+            <img class="app-icon" src="assets/md.png" alt="Mental Disorders and Treatments icon" />
+            <div>
+              <div class="app-top">
+                <span class="app-tag">Mental wellness</span>
+                <span class="app-status">Live on Google Play</span>
+              </div>
+              <h3>Mental Disorders &amp; Treatments</h3>
+              <p>
+                Discover structured information about symptoms, prevention, and natural support approaches in a clean and easy-to-understand format.
+              </p>
+              <div class="app-actions">
+                <a class="play-badge" href="https://play.google.com/store/apps/details?id=mental.disorders.treatments" target="_blank" rel="noopener">
+                  <img src="assets/badge_playstore.png" alt="Get it on Google Play" />
+                </a>
+                <a class="inline-link" href="https://play.google.com/store/apps/details?id=mental.disorders.treatments" target="_blank" rel="noopener">View listing →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="app-card">
+            <img class="app-icon" src="assets/sd.png" alt="All Stomach Diseases and Treatment icon" />
+            <div>
+              <div class="app-top">
+                <span class="app-tag">Reference</span>
+                <span class="app-status">Live on Google Play</span>
+              </div>
+              <h3>All Stomach Diseases &amp; Treatment</h3>
+              <p>
+                A digestive health reference app with educational content, visuals, and practical information designed to support clearer understanding.
+              </p>
+              <div class="app-actions">
+                <a class="play-badge" href="https://play.google.com/store/apps/details?id=stomach.diseases.treatment" target="_blank" rel="noopener">
+                  <img src="assets/badge_playstore.png" alt="Get it on Google Play" />
+                </a>
+                <a class="inline-link" href="https://play.google.com/store/apps/details?id=stomach.diseases.treatment" target="_blank" rel="noopener">View listing →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="app-card">
+            <img class="app-icon" src="assets/knocklock.png" alt="Sun Salutation app icon" />
+            <div>
+              <div class="app-top">
+                <span class="app-tag">Yoga</span>
+                <span class="app-status">Launching soon</span>
+              </div>
+              <h3>Sun Salutation</h3>
+              <p>
+                A modern Surya Namaskar app focused on guided daily practice, energy, strength, mobility, and premium wellness design.
+              </p>
+              <div class="app-actions">
+                <a class="btn btn-secondary" href="#top">Coming soon</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container info-grid">
+        <div class="section-card">
+          <h3>What defines our work</h3>
+          <p>
+            We focus on clean interfaces, strong fundamentals, and practical products that feel easy to use from the first interaction. Our goal is to make mobile apps feel simpler, calmer, and more valuable.
+          </p>
+          <div class="pill-list">
+            <span class="pill">Minimal UI</span>
+            <span class="pill">Wellness-first</span>
+            <span class="pill">Everyday utility</span>
+            <span class="pill">Premium design</span>
+          </div>
+        </div>
+
+        <div class="section-card" id="contact">
+          <h3>Explore more from GoldenKing Apps</h3>
+          <p>
+            Visit our Google Play developer page to discover all published apps and follow upcoming releases.
+          </p>
+          <div class="hero-actions" style="margin-top: 22px;">
+            <a class="btn btn-primary" href="https://play.google.com/store/search?q=pub:GoldenKing%20Apps&c=apps" target="_blank" rel="noopener">Open Google Play portfolio</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-card">
+        <div>
+          <div class="footer-brand">GoldenKing Apps</div>
+          <p>Crafted with ❤️ in 🇮🇳 — premium mobile experiences with a simple, useful core.</p>
+        </div>
+        <a class="btn btn-secondary" href="#top">Back to top</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
